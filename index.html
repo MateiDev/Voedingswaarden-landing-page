@@ -5,90 +5,115 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>VoedingsWaarden Project</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
+    /* Base Reset */
+    * {
       margin: 0;
-      padding: 20px;
-      color: #333;
+      padding: 0;
+      box-sizing: border-box;
     }
+
+    /* Body Styling */
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: linear-gradient(120deg, #ecffe4 0%, #f7f7f7 100%);
+      color: #333;
+      padding: 20px;
+    }
+
+    /* Main Container */
     .container {
       max-width: 900px;
-      margin: auto;
+      margin: 40px auto;
       background: #fff;
       padding: 30px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border-radius: 8px;
     }
+
+    /* Section Spacing */
     header, section, footer {
       margin-bottom: 40px;
     }
+
+    /* Headings */
     h1, h2 {
       color: #2c3e50;
+      margin-bottom: 15px;
+      letter-spacing: 0.5px;
     }
+
+    /* Paragraphs */
     p {
       line-height: 1.6;
+      margin-bottom: 15px;
     }
+
+    /* Lists */
     ul {
       padding-left: 20px;
+      margin-bottom: 15px;
     }
+
+    /* Header Image */
+    .header-logo {
+      width: 10%;
+      margin-top: 20px;
+    }
+
+    /* Team Member Style */
     .team-member {
       margin-bottom: 20px;
+      display: flex;
+      align-items: center;
     }
     .team-member img {
       width: 80px;
       height: 80px;
       border-radius: 50%;
       margin-right: 15px;
-      vertical-align: middle;
+      object-fit: cover;
     }
     .team-member span {
-      vertical-align: middle;
       font-size: 1.1em;
+      color: #2c3e50;
     }
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      padding-top: 30px;
-      height: 0;
-      overflow: hidden;
+
+    /* "Try Our Demo" buttons or links */
+    .demo-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
-    .video-container iframe, .video-container object, .video-container embed {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+    .demo-link {
+      display: inline-block;
+      text-decoration: none;
+      color: #fff;
+      background-color: #2e8b57;
+      padding: 12px 18px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+      font-weight: bold;
+      text-align: center;
     }
+    .demo-link:hover {
+      background-color: #267347;
+    }
+
+    /* Footer Links */
     .contact-info a {
       color: #2980b9;
       text-decoration: none;
+      font-weight: 500;
+      transition: color 0.2s;
     }
-    .video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 aspect ratio */
-    height: 0;
-    background: #000; /* black background instead of a thumbnail */
-    cursor: pointer;
-  }
-  .video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-  }
-  .play-button {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: #fff;
-    font-size: 1.5em;
-    background: rgba(0,0,0,0.5);
-    padding: 10px 20px;
-    border-radius: 5px;
-    z-index: 1;
-  }
+    .contact-info a:hover {
+      color: #186d8c;
+    }
+
+    /* Footer */
+    footer h2 {
+      margin-bottom: 10px;
+    }
   </style>
 </head>
 <body>
@@ -97,9 +122,9 @@
     <!-- Header Section -->
     <header>
       <h1>VoedingsWaarden.nl</h1>
-      <p>Empowering healthier dining choices through transparency and technology.</p>
-      <!-- Visual Element: Banner Image (replace URL with your image link) -->
-      <img src="vw-logo.png" alt="Project Banner" style="width:10%; margin-top:20px;">
+      <p>Because knowledge is the healthiest ingredient.</p>
+      <!-- Visual Element: Banner Image (replace URL with your image link if desired) -->
+      <img src="vw-logo.png" alt="Project Banner" class="header-logo">
     </header>
     
     <!-- Challenge Section -->
@@ -130,24 +155,24 @@
     <section id="next-steps">
       <h2>Next Steps</h2>
       <ul>
-        <li>Expand the ingredient database (e.g., acquire a comprehensive food database).</li>
-        <li>Enhance AI for more accurate nutritional calculations and recipe parsing.</li>
+        <li>Enhance AI for more accurate nutritional calculations</li>
         <li>Improve the user interface to create a more intuitive experience.</li>
         <li>Conduct pilot tests with health-focused restaurants to gather real-world feedback.</li>
         <li>Build strategic partnerships to support future growth.</li>
       </ul>
     </section>
     
-    <!-- Interactive Media Section -->
-    <section id="demo">
-      <h2>Project Demo</h2>
-      <p>Watch our short demo video to see the platform in action.</p>
-      <div class="video-container" onclick="playVideo()">
-        <div class="play-button">Click to play video</div>
-        <video id="demo-video" width="100%" height="auto" style="display: none;" controls>
-          <source src="nggyu.mp4" type="video/mp4">
-          Your browser does not support the video tag.
-        </video>
+    <!-- Try the App Section  -->
+    <section id="try-demo">
+      <h2>Try Our Demo</h2>
+      <p>Explore our platform and test its capabilities.</p>
+      <div class="demo-links">
+        <a class="demo-link" href="https://voedingswaarden.com/demo" target="_blank">
+          Calculate Recipe Macros
+        </a>
+        <a class="demo-link" href="https://voedingswaarden.com/menu" target="_blank">
+          View a Sample Menu
+        </a>
       </div>
     </section>
     
@@ -155,8 +180,12 @@
     <section id="team">
       <h2>Our Team</h2>
       <div class="team-member">
-        <img src="IMG_9044.png" alt="Team Member 1">
-        <span>Matei Teodoru- Project Lead</span>
+        <img src="mt.JPG" alt="Team Member 1">
+        <span>Matei Teodoru – Project Lead</span>
+      </div>
+      <div class="team-member">
+        <img src="el.jpeg" alt="Team Member 2">
+        <span>Elles Bouwman – Marketing Lead</span>
       </div>
     </section>
     
@@ -167,21 +196,6 @@
         Interested in learning more or collaborating with us? Reach out at <a href="mailto:teodorumatei6@gmail.com">teodorumatei6@gmail.com</a>
       </p>
     </footer>
-    
   </div>
-  <script>
-    function playVideo() {
-      var video = document.getElementById("demo-video");
-      // Only initialize video playback if it's hidden
-      if (video.style.display === "none") {
-        video.style.display = "block";
-        video.play();
-        var playBtn = document.querySelector('.play-button');
-        if (playBtn) {
-          playBtn.style.display = 'none';
-        }
-      }
-    }
-  </script>
 </body>
 </html>
